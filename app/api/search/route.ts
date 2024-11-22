@@ -30,7 +30,7 @@ export async function GET(request: Request) {
       document.description.includes(searchTerm) ||
       document.tags.includes(searchTerm)
     ) {
-      searchResults.push({ url: key, ...document })
+      searchResults.push(document)
     }
   }
   return NextResponse.json(searchResults)
